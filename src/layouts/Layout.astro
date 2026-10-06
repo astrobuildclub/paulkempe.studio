@@ -15,8 +15,8 @@ import CustomCursor from "../components/CustomCursorGSAP.astro";
 import CustomScrollObserver from "../components/CustomScrollObserver.astro";
 
 import { VisualEditing } from "@sanity/astro/visual-editing";
-const visualEditingEnabled =
-  import.meta.env.PUBLIC_SANITY_VISUAL_EDITING_ENABLED == "true";
+// Gezet door src/middleware.ts (alleen in de iframe van de Presentation tool).
+const visualEditingEnabled = Astro.locals.visualEditing;
 ---
 
 <html lang={siteSettings.language || "en"}>
