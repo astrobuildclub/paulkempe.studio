@@ -16,6 +16,9 @@ import {
   projectInfoWidget,
 } from "@sanity/dashboard";
 
+const previewOrigin =
+  typeof location !== "undefined" ? location.origin : "http://localhost:4321";
+
 export default defineConfig({
   name: "PaulKempeStudio",
   projectId: import.meta.env.PUBLIC_SANITY_PROJECT_ID,
@@ -26,8 +29,14 @@ export default defineConfig({
     }),
     presentationTool({
       resolve,
-      previewUrl: location.origin,
-      // previewUrl: import.meta.env.SANITY_PREVIEW_URL,
+      previewUrl: {
+        initial: previewOrigin,
+        // Zet via /api/preview een cookie na validatie van het preview-secret.
+        previewMode: {
+          enable: "/api/preview",
+          disable: "/api/preview/disable",
+        },
+      },
     }),
     visionTool({}),
     codeInput(),
