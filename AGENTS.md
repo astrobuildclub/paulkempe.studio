@@ -28,5 +28,6 @@ Lees eerst `README.md` voor context en `CHANGELOG.md` voor recente wijzigingen.
 ## Projectspecifiek
 - Visual Editing volgens `~/Code/_standards/SANITY.md`; content altijd via `loadQuery()` (`src/sanity/lib/load-query.ts`). De Sanity-bestanden staan in `src/sanity/lib/`, niet in `src/lib/sanity/`.
 - Voeg geen andere manier toe om drafts aan te zetten (env-vlag, query-parameter, header).
+- De preview-cookie is ondertekend met `SANITY_API_READ_TOKEN` (`src/sanity/lib/visual-editing.ts`); nooit terug naar een vaste waarde als `true`.
 - Site settings (`getSiteSettings()`) worden met `stegaClean()` schoongemaakt, omdat ze in meta-tags, JSON-LD, `lang`, de tijdzone van de klok en icoonnamen terechtkomen.
 - `src/pages/post/[slug].astro` heeft een `getStaticPaths()`, maar de site draait volledig SSR (`output: "server"`): die functie wordt genegeerd.

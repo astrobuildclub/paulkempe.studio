@@ -8,7 +8,7 @@ Categorieën: **Toegevoegd**, **Gewijzigd**, **Opgelost**, **Verwijderd**, **Bev
 ## [Unreleased]
 
 ### Toegevoegd
-- Visual Editing volgens `~/Code/_standards/SANITY.md`: `/api/preview` (valideert het preview-secret van de Studio en zet een cookie), `/api/preview/disable` en `src/middleware.ts` (drafts alleen met cookie én in de iframe van de Presentation tool).
+- Visual Editing volgens `~/Code/_standards/SANITY.md`: `/api/preview` (valideert het preview-secret van de Studio en zet een cookie, ondertekend met `SANITY_API_READ_TOKEN` en 12 uur geldig, zodat een zelfgezette cookie niets doet), `/api/preview/disable` en `src/middleware.ts` (drafts alleen met geldige cookie én in de iframe van de Presentation tool; responses met preview-cookie krijgen `Cache-Control: private, no-store`).
 - Presentation tool: `previewMode` in `sanity.config.ts`, en `resolve.ts` koppelt nu ook de `pages`-documenten (homepage, about, contact) aan URL's.
 - `.env.example`, `CHANGELOG.md`, `AGENTS.md` en `CLAUDE.md`.
 
