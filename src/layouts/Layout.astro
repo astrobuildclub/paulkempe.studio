@@ -14,7 +14,7 @@ import SiteSchema from "../components/siteSchema.astro";
 import CustomCursor from "../components/CustomCursorGSAP.astro";
 import CustomScrollObserver from "../components/CustomScrollObserver.astro";
 
-import { VisualEditing } from "@sanity/astro/visual-editing";
+import VisualEditing from "../sanity/components/VisualEditing";
 // Gezet door src/middleware.ts (alleen in de iframe van de Presentation tool).
 const visualEditingEnabled = Astro.locals.visualEditing;
 ---
@@ -38,7 +38,7 @@ const visualEditingEnabled = Astro.locals.visualEditing;
     <CustomCursor />
 
     <Footer title={siteSettings.title} timeZone={siteSettings.timezone} />
-    <VisualEditing enabled={visualEditingEnabled} />
+    {visualEditingEnabled && <VisualEditing client:only="react" />}
 
     <SiteSchema />
   </body>
