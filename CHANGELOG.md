@@ -7,6 +7,11 @@ Categorieën: **Toegevoegd**, **Gewijzigd**, **Opgelost**, **Verwijderd**, **Bev
 
 ## [Unreleased]
 
+## [2026-10-07] (PR #34)
+
+### Opgelost
+- Presentation tool na navigatie: de adresbalk bleef op `/api/preview` staan en het documentpaneel toonde de vorige pagina. Eigen `VisualEditing`-component (`src/sanity/components/VisualEditing.tsx`) met een history-adapter, op basis van de al aanwezige dependency `@sanity/visual-editing`.
+
 ## [2026-10-06] (PR #33)
 
 ### Toegevoegd
