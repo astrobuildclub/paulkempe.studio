@@ -7,6 +7,13 @@ Categorieën: **Toegevoegd**, **Gewijzigd**, **Opgelost**, **Verwijderd**, **Bev
 
 ## [Unreleased]
 
+### Gewijzigd
+- Deploy-workflow volgens `_standards/DEPLOY.md`: features via PR naar `staging` (branch deploy op `staging--paulkempe.netlify.app`), gebundelde releases naar `main`. Branch protection op `staging`.
+- `netlify.toml` (nieuw, alleen de `ignore`-regel; buildinstellingen staan in de Netlify-UI): geen build bij commits met alleen documentatie.
+
+### Onderhoud
+- `.github/dependabot.yml`: wekelijkse updates naar `staging`, gegroepeerd (Astro, Sanity, minor/patch).
+
 ## [2026-10-07] (PR #34)
 
 ### Opgelost
